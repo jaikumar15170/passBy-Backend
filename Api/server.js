@@ -1,12 +1,12 @@
 const express = require('express')
-const dontenv = require('dotenv')
-const { MongoClient, Collection } = require('mongodb');
+const dotenv = require('dotenv')
+const { MongoClient } = require('mongodb');
 const bodyparser = require('body-parser')
 const cors = require('cors')
-dontenv.config()
+dotenv.config()
 
 
-const url = 'mongodb://localhost:27017';
+const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
 
 const dbName = 'PassBy';
